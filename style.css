@@ -2,10 +2,11 @@
 
 :root{
     --color-main-purple: #5936CD;
-    --color-light-primary: #fff;
+    --color-light-sec--color-dark-secondary: #fff;
     --color-light-secondary: #f4f4f9;
     --color-text-grey: #7c7c7c;
-    --color-dark-primary:  #010400;
+    --color-dark-primary: #000;
+    --color-dark-secondary: #010400;
     --color-neon-blue: #06bee1;
 }
 
@@ -58,6 +59,7 @@ a{
 	font-size: 14px;
 	font-weight: 700;
 	text-decoration: underline;
+    color: var(--color-dark-primary);
 }
 
 button{
@@ -77,7 +79,7 @@ button{
 
 button .small{
 	background-color: var(--color-light-secondary);
-	color: var(--color-dark-primary);
+	color: var(--color-dark-secondary);
 	font-size: 14px;
 	border-radius: 8px;
 	width: 90px;
@@ -90,7 +92,7 @@ input{
 	height: 48px;
 	border: 2px solid var(--color-neon-blue);
 	border-radius: 8px;
-	color: var(--color-dark-primary);
+	color: var(--color-dark-secondary);
 	font-size: 16px;
 	padding: 6px;
 	box-sizing: border-box;

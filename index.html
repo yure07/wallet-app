@@ -7,7 +7,7 @@
     <body>
         <main class="container-main">
             <article class="container-card">
-                <img class="logo" src="./src/icon/logo.svg" alt="icon-wallet">
+                <img class="logo" src="./src/img/logo.svg" alt="icon-wallet">
                 <section class="content-card">
                     <h3>Bem Vindo!</h3>
                     <p class="mt">Digite seu e-mail abaixo para ter acesso à 
@@ -21,10 +21,11 @@
                         name="input-email"
                         type="name"
                     />
-                    <button type="button" class="mt-larger">Acessar</button>
-                    <a class="mt-larger create-account-link">Não tem uma conta ? Faça seu cadastro aqui.</a>
+                    <button type="button" class="mt-larger" onclick="clickLogin()">Acessar</button>
+                    <a href="./src/pages/register/index.html" class="mt-larger create-account-link">Não tem uma conta ? Faça seu cadastro aqui.</a>
                 </section>
             </article>
-        </main> <!--480 / 460-->
+        </main> 
     </body>
+    <script src="script.js"></script>
 </html>
