@@ -63,9 +63,9 @@ const onRegister = async () => {
         return;
     }
 
-    localStorage.setItem('@wallet-app:email', result.email)
-    localStorage.setItem('@wallet-app:email', result.name)
-    localStorage.setItem('@wallet-app:email', result.id)
+    localStorage.setItem('@wallet-app:UserEmail', result.email)
+    localStorage.setItem('@wallet-app:UserName', result.name)
+    localStorage.setItem('@wallet-app:UserId', result.id)
     window.open('../home/index.html', '_self')
 }
 

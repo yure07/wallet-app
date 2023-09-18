@@ -27,9 +27,9 @@ const clickLogin = async () => {
             alert('usuario nao encontrado :(')
             return
         }
-        localStorage.setItem('@wallet-app:email', email)
-        localStorage.setItem('@wallet-app:email', userName)
-        localStorage.setItem('@wallet-app:email', userId)
+        localStorage.setItem('@wallet-app:UserEmail', email)
+        localStorage.setItem('@wallet-app:UserName', userName)
+        localStorage.setItem('@wallet-app:UserId', userId)
         window.open('./src/pages/home/index.html', '_self')
     } catch (error) {
         console.log({error})
