@@ -14,26 +14,31 @@
                     <p class="mt">Insira seu nome e seu e-mail para ter acesso
                         ao Wallet app e gerenciar suas informações
                     </p>
-                    <label for="input-name" class="mt">Nome</label>
-                    <input 
-                        class="mt-smaller" 
-                        id="input-name" 
-                        placeholder="Ex: José da Silva" 
-                        name="input-email"
-                        type="text"
-                    />
-                    <label for="input-email" class="mt">E-mail</label>
-                    <input 
-                        class="mt-smaller" 
-                        id="input-email" 
-                        placeholder="email@exemplo.com" 
-                        name="input-email"
-                        type="email"
-                    />
-                    <button type="button" class="mt-larger">Cadastrar</button>
+                    <form class="mt" id="form-register">
+                        <label for="input-name" class="mt">Nome</label>
+                        <input 
+                            class="mt-smaller" 
+                            id="input-name" 
+                            placeholder="Ex: José da Silva" 
+                            name="input-email"
+                            type="text"
+                            required
+                        />
+                        <label for="input-email" class="mt">E-mail</label>
+                        <input 
+                            class="mt-smaller" 
+                            id="input-email" 
+                            placeholder="email@exemplo.com" 
+                            name="input-email"
+                            type="email"
+                            required
+                        />
+                        <button type="submit" class="mt-larger">Cadastrar</button>
+                    </form>
                     <a href="../../../index.html" class="mt-larger create-account-link">Já possui uma conta ? Faça o seu login</a>
                 </section>
             </article>
         </main> 
     </body>
+    <script src="script.js"></script>
 </html>

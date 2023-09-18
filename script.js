@@ -1,5 +1,5 @@
 const getApi = async () => {
-    const result = await fetch(`https://apigenerator.dronahq.com/api/INEAjZVi/wallet_users`)
+    const result = await fetch(`https://apigenerator.dronahq.com/api/tilTUhSB/wallet_users`)
     const users = await result.json()
     return users
 }
@@ -7,7 +7,7 @@ const getApi = async () => {
 const clickLogin = async () => {
     const email = document.getElementById('input-email').value
 
-    if(email.lenght < 7 || !email.includes('@')) {
+    if(email.length < 7 || !email.includes('@')) {
         alert('email inválido')
         email.value = ''
         return
