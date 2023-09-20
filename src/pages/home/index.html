@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
-    <h1>Wallet</h1>    
+    <main>
+        <header class="container-header-main">
+            <div class="container-header-inside">    
+                <div class="container-img">
+                    <img src="../../img/logo.svg" alt="logo-header" class="logo">
+                </div>
+                <div class="date">
+                    <h3>19/09/2023</h3>
+                </div>
+                <div class="info" id="infos"></div>
+            </div>
+        </header>
+        <article class="container-cards">
+            <section class="container-card-ficance">
+                <h3>Total de Lançamentos</h3>
+                <h1>320</h1>
+            </section>
+            <section class="container-card-ficance">
+                <h3>Receitas</h3>
+                <h1>R$ 4.200,00</h1>
+            </section>
+            <section class="container-card-ficance">
+                <h3>Despesas</h3>
+                <h1>R$ 3.000,00</h1>
+            </section>
+            <section class="container-card-ficance">
+                <h3>Balanço</h3>
+                <h1 id="highlight">R$1.200,00</h1>
+            </section>
+        </article>
+    </main> 
 </body>
 <script src="script.js"></script>
 </html>
