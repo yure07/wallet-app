@@ -77,8 +77,8 @@ button{
     cursor: pointer;
 } 
 
-button .small{
-	background-color: var(--color-light-secondary);
+button.small{
+	background-color: var(--color-light-prmary);
 	color: var(--color-dark-secondary);
 	font-size: 14px;
 	border-radius: 8px;

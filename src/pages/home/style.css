@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 :root{
     --color-main-purple: #5936CD;
     --color-light-primary: #fff;
@@ -9,11 +12,11 @@
     --color-light-green: #E4FDE1;
 }
 
-main{
-    width: 100vw;
-    height: 100vh;
+body{
+    overflow-x: hidden;
     background-color: var(--color-light-secondary);
 }
+
 
 .container-header-main{
     display: flex;
@@ -50,7 +53,6 @@ main{
     width: 156px;
     height: 48px;
     border: 2px solid var(--color-neon-blue);
-    
     border-radius: 8px;
 }
 
@@ -80,7 +82,6 @@ main{
     padding: 48px 144px;
     justify-content: space-between;
     flex-direction: row;
-    border: 1px solid red;
 }
 
 .container-card-ficance{
@@ -95,3 +96,48 @@ main{
 }
 
 .container-card-ficance #highlight{color: var(--color-main-purple);}
+
+.container-list{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 60px;
+    padding: 24px;
+    width: 1233px;
+    height: 592px;
+    border-radius: 24px;
+    background-color: var(--color-light-primary);
+}
+
+.info-head-list{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+table{
+    margin-top: 34px;
+    font-family: 'Noto Sans';
+    color: var(--color-text-grey);
+}
+
+
+th{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+}
+
+td{
+    font-size: 14px;
+    margin-top: 17px;
+    font-weight: 500;
+}
+
+th.right{text-align: right;}
+
+th.center{text-align: center;}
+
+td.right{text-align: right;}
+
+td.center{text-align: center;}
