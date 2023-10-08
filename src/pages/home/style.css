@@ -111,11 +111,12 @@ body{
 .info-head-list{
     display: flex;
     width: 100%;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 table{
+    height: 40%;
     margin-top: 34px;
     font-family: 'Noto Sans';
     color: var(--color-text-grey);
@@ -123,14 +124,14 @@ table{
 
 
 th{
-    font-size: 16px;
+    color: #000;
+    font-size: 18px;
     font-weight: 600;
     text-align: left;
 }
 
-td{
-    font-size: 14px;
-    margin-top: 17px;
+tr > td{
+    font-size: 16px;
     font-weight: 500;
 }
 
