@@ -18,27 +18,23 @@
             </div>
         </header>
         <article class="container-cards">
-            <section class="container-card-ficance">
+            <section class="container-card-ficance" id="container-card-ficance">
                 <h3>Total de Lançamentos</h3>
-                <h1>320</h1>
             </section>
-            <section class="container-card-ficance">
+            <section class="container-card-ficance" id="container-card-revenues">
                 <h3>Receitas</h3>
-                <h1>R$ 4.200,00</h1>
             </section>
-            <section class="container-card-ficance">
+            <section class="container-card-ficance" id="container-card-expenses">
                 <h3>Despesas</h3>
-                <h1>R$ 3.000,00</h1>
             </section>
-            <section class="container-card-ficance">
+            <section class="container-card-ficance" id="container-card-balances">
                 <h3>Balanço</h3>
-                <h1 id="highlight">R$1.200,00</h1>
             </section>
         </article>
         <article class="container-list">
             <section class="info-head-list">
                 <h2>Últimos lançamentos</h2>
-                <button class="small">Adicionar</button>
+                <button class="small" onclick="onOpenModal()">Adicionar</button>
             </section>
                 
             <table id="table-space">
@@ -50,6 +46,43 @@
                     <th class="right">Ação</th>
                 </tr>
             </table>
+        </article>
+        <article class="modal-background" id="modal">
+            <section class="modal-container">
+                <header class="modal-header">
+                    <h3>Adicionar Item</h3>
+                    <button class="small" onclick="onCloseModal()">Fechar</button>
+                </header>
+                <form class="form-add-item" id="form-add-item">
+                    <label for="input-title" class="mt">Título</label>
+                    <input 
+                        class="mt-smaller" 
+                        id="input-title" 
+                        placeholder="Despesa" 
+                        name="input-title"
+                        type="text"
+                    />
+                    <label for="input-value" class="mt">Valor</label>
+                    <input 
+                        class="mt-smaller" 
+                        id="input-value" 
+                        placeholder="Para despesas coloque valores negativos (-250)" 
+                        name="input-value"
+                        type="text"
+                    />
+                    <label for="input-date" class="mt">Data</label>
+                    <input 
+                        class="mt-smaller" 
+                        id="input-date" 
+                        placeholder="21/06/2021" 
+                        name="input-date"
+                        type="date"
+                    />
+                    <label for="input-category" class="mt">Categoria</label>
+                    <select for="input-category" class="mt-smaller" id="input-category"></select>
+                    <button type="submit" class="mt-larger" onclick="getItemToAdd()">Adicionar</button>
+                </form>
+            </section>
         </article>
     </main> 
 </body>

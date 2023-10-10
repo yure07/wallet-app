@@ -142,3 +142,55 @@ th.center{text-align: center;}
 td.right{text-align: right;}
 
 td.center{text-align: center;}
+
+td#delete-action{
+    cursor: pointer;
+    color: red;
+}
+
+.modal-background{
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 4, 0, 0.2);
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    padding: 24px;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-add-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-add-item > select{
+    height: 48px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 2px solid #06bee1;
+    background-color: #f4f4f9;
+    color: #000;
+    font-family: 'Noto Sans';
+    font-size: 16px;
+}
+
+.form-add-item > label{
+    margin-top: 12px;
+}
