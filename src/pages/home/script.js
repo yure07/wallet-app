@@ -42,6 +42,34 @@ const loadFinances = (financesApi) => {
     const table = document.getElementById('table-space')
     table.innerHTML = ""
     
+    const tableRowHeader = document.createElement('tr')
+    const titleElement = document.createElement('th')
+    titleElement.innerHTML = 'Título'
+
+    const categoryElement = document.createElement('th')
+    categoryElement.innerHTML = 'Categoria'
+    categoryElement.className = 'center'
+
+    const dateElement = document.createElement('th')
+    dateElement.innerHTML = 'Data'
+    dateElement.className = 'center'
+
+    const valueElement = document.createElement('th')
+    valueElement.innerHTML = 'Valor'
+    valueElement.className = 'right'
+
+    const actionElement = document.createElement('th')
+    actionElement.innerHTML = 'Ação'
+    actionElement.className = 'right'
+
+    tableRowHeader.appendChild(titleElement)
+    tableRowHeader.appendChild(categoryElement)
+    tableRowHeader.appendChild(dateElement)
+    tableRowHeader.appendChild(valueElement)
+    tableRowHeader.appendChild(actionElement)
+
+    table.appendChild(tableRowHeader)
+
     let revenue = 0
     let expenses = 0
     info.map((item) => {
