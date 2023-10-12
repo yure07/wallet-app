@@ -40,6 +40,7 @@ const loadFinances = (financesApi) => {
     const info = financesApi
     
     const table = document.getElementById('table-space')
+    table.innerHTML = ""
     
     let revenue = 0
     let expenses = 0
@@ -63,7 +64,7 @@ const loadFinances = (financesApi) => {
         tdCategory.innerHTML = item.name
         tdTtile.innerHTML = item.title
         tdDate.innerHTML = item.date
-        tdValue.innerHTML = parseFloat(item.value)
+        tdValue.innerHTML = `R$ ${Number(item.value)}`
         tdDelete.innerHTML = 'Deletar'
         
         // add class on table data (td)
@@ -86,24 +87,55 @@ const loadFinances = (financesApi) => {
 
     // create boards: total launchers, revenues, expenses and balance
     const sectionLaunchers = document.getElementById('container-card-ficance')
+    // to avoid create two or more texts tags
+    sectionLaunchers.innerHTML = ""
+
     const sectionRevenues = document.getElementById('container-card-revenues')
+    sectionRevenues.innerHTML = ""
+
     const sectionExpenses = document.getElementById('container-card-expenses')
+    sectionExpenses.innerHTML = ""
+
     const sectionBalances = document.getElementById('container-card-balances')
+    sectionBalances.innerHTML = ""
     
+    // create texts tags 
+    const topTextLaunchers = document.createElement('h3')
     const textLaunchers = document.createElement('h1')
+
+    const topTextRevenues = document.createElement('h3')
     const textRevenues = document.createElement('h1')
+
+    const topTextExpenses = document.createElement('h3')
     const textExpenses = document.createElement('h1')
+
+    const topTextBalances = document.createElement('h3')
     const textBalances = document.createElement('h1')
 
+    // add element on tags created
+    topTextLaunchers.innerHTML = 'Total de Lançamentos'
     textLaunchers.innerHTML = financesApi.length
+
+    topTextRevenues.innerHTML = 'Receitas'
     textRevenues.innerHTML = `R$ ${revenue},00`
+
+    topTextExpenses.innerHTML = 'Despesas'
     textExpenses.innerHTML = `R$ ${expenses * -1 },00`
+
+    topTextBalances.innerHTML = 'Balanço'
     textBalances.innerHTML = `R$ ${revenue - (expenses * -1)},00`
     textBalances.id = 'highlight'
 
+    sectionLaunchers.appendChild(topTextLaunchers) 
     sectionLaunchers.appendChild(textLaunchers)
+
+    sectionRevenues.appendChild(topTextRevenues)
     sectionRevenues.appendChild(textRevenues)
+
+    sectionExpenses.appendChild(topTextExpenses)
     sectionExpenses.appendChild(textExpenses)
+
+    sectionBalances.appendChild(topTextBalances)
     sectionBalances.appendChild(textBalances)
 }
 
@@ -117,34 +149,25 @@ const onOpenModal = () => {
     modal.style.display = 'flex'
 }
 
-const loadCategories = (finances) => {
-    const info = finances
-
-    const selectContainer = document.getElementById('input-category')
-    info.map((item) => {
-        const option = document.createElement('option')
-        option.id = item.id
-        for (let i = 0; i < info.length; i++) {
-            if(info[i] != item.name) option.innerHTML = item.name
-        }
-        selectContainer.appendChild(option)
-    })
-}
-
 const addItem = async (item) => {
-    const response = await fetch('https://apigenerator.dronahq.com/api/Ln5sqqtt/wallet_finances',{
-        method: 'POST',
-        cache: 'no-cache',
-        mode: 'cors',
-        credentials: 'same-origin',
-        headers:{
-            'Content-type': 'application/json'
-        },
-        redirect: 'follow',
-        body: JSON.stringify(item),
-        referrerPolicy: 'no-referrer'
-    })
-    return response.json()
+    try {
+        const response = await fetch('https://apigenerator.dronahq.com/api/Ln5sqqtt/wallet_finances',{
+            method: 'POST',
+            cache: 'no-cache',
+            mode: 'cors',
+            credentials: 'same-origin',
+            headers:{
+                'Content-type': 'application/json'
+            },
+            redirect: 'follow',
+            body: JSON.stringify(item),
+            referrerPolicy: 'no-referrer'
+        })
+        return response.json()
+        
+    } catch (error) {
+        console.log(`erro: ${error} `)
+    }
 }
 
 const deleteItem = async (id) => {
@@ -162,20 +185,22 @@ const deleteItem = async (id) => {
     return response.json()
 }
 
-const getItemToAdd = (target) => {
-    const title = target[0].value
-    const value = target[1].value
-    let date = target[2].value
-    date = date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$3/$2/$1') // regex to transforme date style to Brazil
-    const category = target[3].value
-
-    addItem({
-        title,
-        value,
-        date,
-        name: category
-    })
-
+const getItemToAdd = async (target) => {
+        const title = target[0].value
+        const value = target[1].value
+        let date = target[2].value
+        date = date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$3/$2/$1') // regex to transforme date style to Brazil
+        const category = target[3].value
+    
+        await addItem({
+            title,
+            value,
+            date,
+            name: category
+        })
+        const apiFinances = await getApiFinances()
+        onCloseModal()
+        loadFinances(apiFinances)
 }
 
 window.onload = async () => {
@@ -187,6 +212,5 @@ window.onload = async () => {
     }
     loadInfo()
     loadFinances(finances)
-    loadCategories(finances)
     const deleter = document.getElementById('delete-action')
 }

@@ -18,18 +18,10 @@
             </div>
         </header>
         <article class="container-cards">
-            <section class="container-card-ficance" id="container-card-ficance">
-                <h3>Total de Lançamentos</h3>
-            </section>
-            <section class="container-card-ficance" id="container-card-revenues">
-                <h3>Receitas</h3>
-            </section>
-            <section class="container-card-ficance" id="container-card-expenses">
-                <h3>Despesas</h3>
-            </section>
-            <section class="container-card-ficance" id="container-card-balances">
-                <h3>Balanço</h3>
-            </section>
+            <section class="container-card-ficance" id="container-card-ficance"></section>
+            <section class="container-card-ficance" id="container-card-revenues"></section>
+            <section class="container-card-ficance" id="container-card-expenses"></section>
+            <section class="container-card-ficance" id="container-card-balances"></section>
         </article>
         <article class="container-list">
             <section class="info-head-list">
@@ -79,7 +71,12 @@
                         type="date"
                     />
                     <label for="input-category" class="mt">Categoria</label>
-                    <select for="input-category" class="mt-smaller" id="input-category"></select>
+                    <select for="input-category" class="mt-smaller" id="input-category">
+                        <option>Trabalho</option>
+                        <option>Casa</option>
+                        <option>Despesa</option>
+                        <option>Compras</option>
+                    </select>
                     <button type="submit" class="mt-larger" onclick="getItemToAdd()">Adicionar</button>
                 </form>
             </section>

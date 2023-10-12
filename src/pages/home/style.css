@@ -116,12 +116,10 @@ body{
 }
 
 table{
-    height: 40%;
     margin-top: 34px;
     font-family: 'Noto Sans';
     color: var(--color-text-grey);
 }
-
 
 th{
     color: #000;
