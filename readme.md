@@ -1,5 +1,8 @@
 # Wallet App
 
+<img src="https://github.com/yure07/wallet-app/blob/main/src/img/previa.png"
+alt="previa wallet-app" width="678" height="228"/>
+
 ## Introdução
 Esse é uma administrador de finanças, feito com HTML, CSS e Javascript. Tendo o principal objetivo gerenciar e mostrar 
 os dados financeiros que são salvos na API feita com DronaHQ, armazenando os dados como, Valores, Data, e tipo de Dado.
