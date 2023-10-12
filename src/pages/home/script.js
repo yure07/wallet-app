@@ -85,6 +85,8 @@ const loadFinances = (financesApi) => {
         const tdDate = document.createElement('td')
         const tdValue = document.createElement('td')
         const tdDelete = document.createElement('td')
+
+        tdDelete.onclick = () => deleteItem(item.id)
         
         if(item.title === 'Cartão Crédito') item.value *= -1
         
@@ -199,18 +201,19 @@ const addItem = async (item) => {
 }
 
 const deleteItem = async (id) => {
-    const response = await fetch(`https://apigenerator.dronahq.com/api/Ln5sqqtt/wallet_finances/${id}`,{
-        method: 'DELETE',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers:{
-            'Content-type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-    })
-    return response.json()
+    try {
+        const infoApi = await getApiFinances()
+        await fetch(`https://apigenerator.dronahq.com/api/Ln5sqqtt/wallet_finances/${id}`,{
+            method: 'DELETE',
+            headers:{
+                'Content-type': 'application/json'
+            }
+        })
+        loadFinances(infoApi)
+        window.location.href = window.location.href
+    } catch (error) {
+        alert('erro ao deletar item')
+    }
 }
 
 const getItemToAdd = async (target) => {
@@ -240,5 +243,4 @@ window.onload = async () => {
     }
     loadInfo()
     loadFinances(finances)
-    const deleter = document.getElementById('delete-action')
 }
