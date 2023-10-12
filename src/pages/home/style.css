@@ -74,7 +74,10 @@ body{
 
 .info a {text-decoration: none;}
 
-.info .exit-account{margin-left: 32px;}
+.info .exit-account{
+    margin-left: 32px;
+    cursor: pointer;
+}
 
 .container-cards{
     display: flex;

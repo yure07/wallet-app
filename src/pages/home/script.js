@@ -6,6 +6,11 @@ const getApiFinances = async () => {
     return finances
 }
 
+const onLogout = () => {
+    localStorage.clear()
+    window.open('../../../index.html', '_self')
+}
+
 const loadInfo = async () => {
     const infoFinances = await getApiFinances()
 
@@ -29,6 +34,8 @@ const loadInfo = async () => {
     exitLink.innerHTML = 'sair'
     textData.innerHTML = data
     
+    exitLink.onclick = () => onLogout()
+
     divData.appendChild(textData)
     divLetterUser.appendChild(letterUser)
     divInfos.appendChild(divLetterUser)
@@ -90,28 +97,28 @@ const loadFinances = (financesApi) => {
         
         if(item.title === 'Cartão Crédito') item.value *= -1
         
-        // add info on table data (td)
+        // add info onLogout() table data (td)
         tdCategory.innerHTML = item.name
         tdTtile.innerHTML = item.title
         tdDate.innerHTML = item.date
         tdValue.innerHTML = `R$ ${Number(item.value)}`
         tdDelete.innerHTML = 'Deletar'
         
-        // add class on table data (td)
+        // add class onLogout() table data (td)
         tdTtile.classList = 'center'
         tdDate.classList = 'center'
         tdValue.classList = 'right'
         tdDelete.classList = 'right'
         tdDelete.id = 'delete-action'
         
-        // add table data (td) on table row (tr)
+        // add table data (td) onLogout() table row (tr)
         tableRow.appendChild(tdCategory)
         tableRow.appendChild(tdTtile)
         tableRow.appendChild(tdDate)
         tableRow.appendChild(tdValue)
         tableRow.appendChild(tdDelete)
         
-        // add table row (tr) on table
+        // add table row (tr) onLogout() table
         table.appendChild(tableRow)
     })
 
@@ -142,7 +149,7 @@ const loadFinances = (financesApi) => {
     const topTextBalances = document.createElement('h3')
     const textBalances = document.createElement('h1')
 
-    // add element on tags created
+    // add element onLogout() tags created
     topTextLaunchers.innerHTML = 'Total de Lançamentos'
     textLaunchers.innerHTML = financesApi.length
 
