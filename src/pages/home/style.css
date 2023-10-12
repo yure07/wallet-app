@@ -17,7 +17,6 @@ body{
     background-color: var(--color-light-secondary);
 }
 
-
 .container-header-main{
     display: flex;
     align-items: center;
@@ -198,4 +197,59 @@ td#delete-action{
 
 .form-add-item > label{
     margin-top: 12px;
+}
+
+
+/* -- MEDIA QUERIES -- */
+
+/* -- NOTEBOOKS -- */
+@media screen and (max-width: 1299px){
+    .container-header-main{padding: 24px 24px;}
+    
+    .container-img{width: 220px;}
+
+    .container-cards{padding: 48px 64px;}
+
+    .container-card-ficance{
+        width: 220px;
+        height: 120px;
+    }
+
+    .container-card-ficance h1{font-size: 24px;}
+    .container-card-ficance h3{font-size: 16px;}
+
+    .container-list{
+        width: 90%;
+        height: auto;
+    }
+}
+
+/* --- TABLETS */
+@media screen and (min-width: 767px) and (max-width: 1030px){
+    .container-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 220px);
+        gap: 25px;
+        margin: 36px auto;
+        width: 65%;
+        padding: 0;
+    }
+}
+
+/* -- MOBILE -- */
+@media (max-width: 767px){
+    .container-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 220px);
+        border: 1px solid red;
+        gap: 25px;
+        margin: 36px auto;
+        width: 65%;
+        padding: 0;
+    }
+
+    .container-img{
+        border: 1px solid red;
+        width: 190px;
+    }
 }
